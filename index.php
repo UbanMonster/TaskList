@@ -12,7 +12,7 @@
 <div class="container">
     <div id="lobilist">
         <div id="lobilist-examples">
-            <h1>Ola!</h1>
+            <h1>TaskList</h1>
             <hr>
             <div>
                 <div >
@@ -46,18 +46,16 @@
                 }
             ]
         };
- 
-        $.post("list.php",function(data) {
-            try {
+
+        try {
+            $.post("list.php",function(data) {
                 if (data !== null && data.length)
-                    data = JSON.parse(data.trim());
-                else
-                    data = init;
-            } catch (e) {
-                data = init;
-            }
-            $('#task-lists').lobiList(data);
-        });
+                    init = JSON.parse(data.trim());                        
+            });
+        } catch (e) {
+        } finally {
+            $('#task-lists').lobiList(init);
+        }  
     });
 </script>
 </body>
