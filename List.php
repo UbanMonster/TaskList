@@ -3,9 +3,8 @@
     class Produto {
 
         private $id;
-        private $nome;
-        private $descricao;
-        private $preco;
+        private $style;
+	private $itens;
 
         public function getId() {
             return $this->id;
@@ -15,29 +14,21 @@
             $this->id = $id;
         }
 
-        public function getNome() {
-            return $this->nome;
+        public function getStyle() {
+            return $this->style;
         }
 
-        public function setNome($nome) {
-            $this->nome = $nome;
+        public function setStyle($style) {
+            $this->style = $style;
         }
+	
+	public function getItens() {
+		return $this->itens;
+	}
 
-        public function getDescricao() {
-            return $this->descricao;
-        }
-
-        public function setDescricao($descricao) {
-            $this->descricao = $descricao;
-        }
-
-        public function getPreco() {
-            return $this->preco;
-        }
-
-        public function setPreco($preco) {
-            $this->preco = $preco;
-        }
+	public function setItens($itens) {
+		$this->itens = $itens;
+	}
 
     }
 
